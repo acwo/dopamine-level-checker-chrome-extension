@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>D-Level Analyzer - UI Demo</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<style>
+		:root {
+			--background: 210 20% 98%;
+			--foreground: 222 47% 11%;
+			--card: 0 0% 100%;
+			--card-foreground: 222 47% 11%;
+			--border: 240 6% 90%;
+			--primary: 262 83% 58%;
+			--muted: 240 5% 96%;
+			--muted-foreground: 240 4% 46%;
+		}
+		body {
+			background-color: hsl(var(--background));
+			color: hsl(var(--foreground));
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+		}
+		.card {
+			background-color: hsl(var(--card));
+			color: hsl(var(--card-foreground));
+			border: 1px solid hsl(var(--border));
+		}
+		.bg-muted {
+			background-color: hsl(var(--muted));
+		}
+		.text-muted-foreground {
+			color: hsl(var(--muted-foreground));
+		}
+	</style>
+</head>
+<body class="p-8">
+	<div class="max-w-4xl mx-auto">
+		<h1 class="text-3xl font-bold mb-8">D-Level Analyzer - Improved UI</h1>
+		
+		<!-- Header Demo -->
+		<section class="mb-8">
+			<h2 class="text-2xl font-semibold mb-4">Header (List View)</h2>
+			<div class="card rounded-lg shadow-sm">
+				<div class="flex items-center justify-between px-6 py-4 border-b">
+					<h3 class="text-lg font-semibold">D-Level Analyzer</h3>
+					<button class="p-2 hover:bg-muted rounded-md">
+						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</section>
+
+		<!-- Analysis Card Grid Demo -->
+		<section class="mb-8">
+			<h2 class="text-2xl font-semibold mb-4">Analysis Cards (Grid View)</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+				<!-- Card 1 -->
+				<div class="card rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer">
+					<div class="relative">
+						<div class="aspect-video overflow-hidden bg-gray-200">
+							<img src="https://img.youtube.com/vi/g5CGSGIWci0/mqdefault.jpg" 
+								 alt="Video thumbnail" 
+								 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+						</div>
+						<div class="absolute top-2 left-2 bg-black/70 backdrop-blur-sm rounded-lg p-2">
+							<div class="text-white text-center">
+								<div class="text-xl font-bold">92</div>
+								<div class="text-xs opacity-80">/ 100</div>
+							</div>
+						</div>
+					</div>
+					<div class="p-4">
+						<h3 class="text-sm font-medium line-clamp-2">Wheels On The Bus | CoComelon Nursery Rhymes & Kids Songs</h3>
+					</div>
+				</div>
+				
+				<!-- Card 2 -->
+				<div class="card rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer">
+					<div class="relative">
+						<div class="aspect-video overflow-hidden bg-gray-200">
+							<img src="https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg" 
+								 alt="Video thumbnail" 
+								 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+						</div>
+						<div class="absolute top-2 left-2 bg-black/70 backdrop-blur-sm rounded-lg p-2">
+							<div class="text-white text-center">
+								<div class="text-xl font-bold">45</div>
+								<div class="text-xs opacity-80">/ 100</div>
+							</div>
+						</div>
+					</div>
+					<div class="p-4">
+						<h3 class="text-sm font-medium line-clamp-2">Example Video Title Here</h3>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Filter Buttons Demo -->
+		<section class="mb-8">
+			<h2 class="text-2xl font-semibold mb-4">Filter Buttons</h2>
+			<div class="card rounded-lg shadow-sm p-6">
+				<div class="flex items-center gap-2 mb-4">
+					<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path>
+					</svg>
+					<span class="text-sm font-semibold" style="color: #FFF;">Filter by D-Level:</span>
+				</div>
+				<div class="flex flex-wrap gap-2">
+					<button class="px-4 py-2 text-sm font-medium rounded-full bg-blue-500 text-white hover:bg-blue-600 transition-colors">
+						Calm (1-30)
+					</button>
+					<button class="px-4 py-2 text-sm font-medium rounded-full border bg-white hover:bg-gray-50 transition-colors">
+						Balanced (31-65)
+					</button>
+					<button class="px-4 py-2 text-sm font-medium rounded-full border bg-white hover:bg-gray-50 transition-colors">
+						Energetic (66-85)
+					</button>
+					<button class="px-4 py-2 text-sm font-medium rounded-full border bg-white hover:bg-gray-50 transition-colors">
+						Electrifying (86-100)
+					</button>
+				</div>
+			</div>
+		</section>
+
+		<!-- Settings Demo -->
+		<section class="mb-8">
+			<h2 class="text-2xl font-semibold mb-4">Settings Page</h2>
+			<div class="card rounded-lg shadow-sm p-6">
+				<div class="flex items-center gap-2 mb-2">
+					<svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path>
+					</svg>
+					<h3 class="text-lg font-semibold">API Configuration</h3>
+				</div>
+				<p class="text-sm text-muted-foreground mb-4">Configure your Gemini AI API key to enable video analysis.</p>
+				<div class="space-y-4">
+					<div class="space-y-2">
+						<label class="text-sm font-medium">Gemini API Key</label>
+						<input type="password" 
+							   placeholder="Enter your Gemini API Key" 
+							   class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+						<p class="text-xs text-muted-foreground">Your API key is stored locally and never shared.</p>
+					</div>
+					<button class="px-4 py-2 bg-primary text-white rounded-md hover:opacity-90 transition-opacity flex items-center gap-2">
+						<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"></path>
+						</svg>
+						Save API Key
+					</button>
+				</div>
+			</div>
+		</section>
+	</div>
+</body>
+</html>
+
