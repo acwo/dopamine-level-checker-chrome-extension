@@ -41,14 +41,15 @@ The **D-Level** (Dopamine Level) is a perceptual score (0-100) that measures how
 
 ### For Users
 
-1. Download the latest release from the [Releases page](https://github.com/acwo/dopamine-level-checker-chrome-extension/releases)
-2. Extract the ZIP file
-3. Open Chrome and go to `chrome://extensions/`
-4. Enable "Developer mode" (toggle in top right)
-5. Click "Load unpacked"
-6. Select the extracted `dist` folder
+1. Download **D-Level-AI-Analyzer-v1.0.0.zip** from [Releases](https://github.com/acwo/dopamine-level-checker-chrome-extension/releases)
+2. **Extract the ZIP file** to a folder on your computer
+3. Open Chrome and navigate to `chrome://extensions/`
+4. Enable **"Developer mode"** (toggle in top-right corner)
+5. Click **"Load unpacked"**
+6. Select the **EXTRACTED FOLDER** (the folder containing manifest.json and INSTALL.txt)
 7. Get your free Gemini API key from [Google AI Studio](https://aistudio.google.com/app/apikey)
-8. Click the extension icon and enter your API key
+8. Click the extension icon in Chrome toolbar and enter your API key in the settings
+9. Navigate to any YouTube video and click **"Run D-Level Analysis"** button
 
 ### For Developers
 
