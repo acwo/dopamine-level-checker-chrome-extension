@@ -23,8 +23,13 @@ build/
 .env
 .env.local
 .env.*.local
+!sample.env
 *.key
 *.pem
+
+# Release artifacts
+D-Level-AI-Analyzer-*/
+*.zip
 
 # Logs
 logs/

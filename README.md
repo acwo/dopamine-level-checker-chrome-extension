@@ -140,6 +140,60 @@ The heart of this project is the **"Dopamine Level Checker"** (v0.94-beta) - a c
 
 **Philosophy**: Dopamine isn't "good" or "bad" – the goal is to help children follow meaning, not chase stimulus.
 
+## 🤖 AI Integration Overview
+
+This extension demonstrates a **hybrid AI architecture** that showcases the power of Chrome's Built-in AI:
+
+### Client-Side AI (Gemini Nano)
+- **Purpose**: Fast, private "Promise Analysis" of video metadata
+- **How it works**: 
+  - Runs entirely on your device using Chrome's Prompt API
+  - Analyzes video title, description, channel info, and comments
+  - No data sent to external servers
+  - Provides instant insights about what the content promises
+- **API**: Chrome Built-in AI Prompt API (`window.ai.languageModel`)
+- **Requirements**: Chrome 138+ with Gemini Nano downloaded (~22GB)
+
+### Server-Side AI (Gemini 2.5 Pro)
+- **Purpose**: Deep multimodal analysis of actual video content
+- **How it works**:
+  - Sends YouTube video URL to Google's Gemini API
+  - AI watches and analyzes the entire video (visual + audio)
+  - Measures 20+ perceptual factors across 5 layers
+  - Returns comprehensive D-Level score with justification
+- **API**: Google Gemini 2.5 Pro via REST API
+- **Endpoint**: `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-thinking-exp-01-21:generateContent`
+- **Authentication**: Requires user's personal Gemini API key
+- **Privacy**: Video URL is sent to Google; subject to Google's Privacy Policy
+
+### Data Flow
+```
+User clicks button → Content script extracts metadata
+                  ↓
+         ┌────────┴────────┐
+         ↓                 ↓
+    Local Analysis    Cloud Analysis
+    (Gemini Nano)    (Gemini 2.5 Pro)
+         ↓                 ↓
+    Promise Analysis  Full Video Analysis
+         ↓                 ↓
+         └────────┬────────┘
+                  ↓
+         Display in Side Panel
+                  ↓
+         Cache locally for fast access
+```
+
+### API Configuration
+
+The extension requires a **free Gemini API key**:
+1. Get your key at: https://aistudio.google.com/app/apikey
+2. Enter it in the extension settings
+3. Key is stored locally in `chrome.storage.local`
+4. Key is only used to authenticate API calls to Google
+
+**No personal data is collected or stored by this extension.** See [PRIVACY.md](PRIVACY.md) for full details.
+
 ## 🔮 Future Vision
 
 - **Public Database**: External API for accessing analyzed videos without running analyses

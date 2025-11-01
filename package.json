@@ -1,7 +1,7 @@
 {
 	"name": "dlevel-ai-chrome-extension",
 	"version": "1.0.0",
-	"description": "D-Level AI Chrome Extension",
+	"description": "Measure the perceptual energy of any YouTube video – a digital nutrition label for the mind that helps parents and viewers find digital balance. Built as a Chrome Extension.",
 	"private": true,
 	"scripts": {
 		"watch": "webpack --watch --config webpack.config.js",
